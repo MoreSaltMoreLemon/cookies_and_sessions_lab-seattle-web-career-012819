@@ -1,0 +1,11 @@
+<%# byebug %>
+<h1>Cart:</h1>
+<ul>
+  <% session[:cart].each do |product|%>
+    <li><p><%= product %></p></li>
+  <% end %>
+</ul>
+<%= form_tag '/products/add', method: :post do %>
+  <%= text_field_tag 'product' %>
+  <%= submit_tag 'add to cart'%>
+<% end %>

@@ -13,6 +13,7 @@ RSpec.describe "products/index", :type => :view do
 
   it "shows everything in the cart" do
     session[:cart] = ['apples', 'bananas', 'pears']
+    # byebug
     render
     expect(rendered).to include 'apples'
     expect(rendered).to include 'bananas'
